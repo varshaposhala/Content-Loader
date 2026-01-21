@@ -1,0 +1,5 @@
+{
+  "name": "NxtWave Content Loader",
+  "description": "A streamlined tool for generating assessment JSON payloads for MCQs and Coding tasks with integrated file upload handling.",
+  "requestFramePermissions": []
+}
