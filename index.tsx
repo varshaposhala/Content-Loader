@@ -1,7 +1,7 @@
 
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import App from './App.tsx';
+import App from './App';
 
 const rootElement = document.getElementById('root');
 
@@ -13,5 +13,5 @@ if (rootElement) {
     </React.StrictMode>
   );
 } else {
-  console.error("Fatal Error: Could not find the #root element in index.html. Check if index.html is correctly structured.");
+  console.error("Fatal Error: Could not find the #root element in index.html.");
 }
