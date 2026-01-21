@@ -13,12 +13,10 @@ const App: React.FC = () => {
   const sidebarActiveClass = isProd ? 'bg-indigo-100 text-indigo-700' : 'bg-amber-100 text-amber-700';
   const accentTextClass = isProd ? 'text-indigo-700' : 'text-amber-700';
 
-  // Generate a unique key for the active configuration to reset form state when switching
   const formKey = `${environment}-${activeTab}`;
 
   return (
     <div className="min-h-screen flex flex-col transition-colors duration-300">
-      {/* Header */}
       <header className={`${themeClass} text-white shadow-lg sticky top-0 z-50 transition-colors duration-500`}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center">
           <div className="flex items-center space-x-3">
@@ -33,7 +31,6 @@ const App: React.FC = () => {
             </div>
           </div>
 
-          {/* Environment Switcher */}
           <div className="flex items-center bg-black/20 p-1 rounded-xl backdrop-blur-sm border border-white/10">
             <button
               onClick={() => setEnvironment(AppEnvironment.PROD)}
@@ -55,10 +52,8 @@ const App: React.FC = () => {
         </div>
       </header>
 
-      {/* Main Layout */}
       <main className="flex-grow max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 w-full">
         <div className="flex flex-col md:flex-row gap-8">
-          {/* Sidebar / Tabs */}
           <aside className="w-full md:w-64 flex-shrink-0">
             <nav className="space-y-2">
               <button
@@ -112,7 +107,6 @@ const App: React.FC = () => {
             </div>
           </aside>
 
-          {/* Content Area */}
           <div className="flex-grow">
             <div className="bg-white rounded-xl shadow-sm border border-slate-200 overflow-hidden">
               <div className="p-6">
@@ -127,7 +121,6 @@ const App: React.FC = () => {
         </div>
       </main>
 
-      {/* Footer */}
       <footer className="bg-white border-t border-slate-200 py-6 mt-12">
         <div className="max-w-7xl mx-auto px-4 text-center text-slate-500 text-sm">
           &copy; {new Date().getFullYear()} NxtWave Assessments Tooling
