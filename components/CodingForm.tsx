@@ -44,28 +44,6 @@ const CodingForm: React.FC<Props> = ({ type, environment }) => {
    * Must have characters after the folder name/slash to count as having a file.
    */
   const validateFolderAndFile = () => {
-    if (!url.trim()) return { hasFolder: false, hasFile: false };
-    
-    const normalizedUrl = url.toLowerCase();
-    const folderName = requiredFolder.toLowerCase();
-    const folderEncoded = folderName.replace(/ /g, '%20');
-    
-    const findMatch = (name: string) => {
-      const index = normalizedUrl.indexOf(name);
-      if (index === -1) return null;
-      
-      // Found the folder, now check for content after it
-      const afterFolder = normalizedUrl.substring(index + name.length);
-      // Content after folder must start with / and have text, or just have text if / is part of the name
-      const hasContent = afterFolder.replace(/^\//, '').trim().length > 0;
-      return { found: true, hasFile: hasContent };
-    };
-
-    const matchLiteral = findMatch(folderName);
-    const matchEncoded = findMatch(folderEncoded);
-
-    const result = matchLiteral || matchEncoded || { found: false, hasFile: false };
-    return { hasFolder: result.found, hasFile: result.hasFile };
   };
 
   const { hasFolder, hasFile } = validateFolderAndFile();
