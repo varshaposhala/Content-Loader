@@ -5,10 +5,10 @@ import { MCQPayload, AppEnvironment } from '../types';
 
 const SUB_SHEET_OPTIONS = [
   'Questions',
-  'Question Tags',
-  'Options',
-  'Explanations',
-  'Metadata'
+  'QuestionTag',
+  'OrganisationQuestionDetails',
+  'ide_sessions',
+  'DeleteQuestionTag'
 ];
 
 interface Props {
